@@ -9,6 +9,7 @@
     --font-main: 'Oswald', sans-serif;
     --font-title: 'Bebas Neue', cursive;
     --font-tech: 'Rajdhani', sans-serif; 
+    --font-cinzel: 'Cinzel', serif; /* Agregamos la variable */
 }
 
 /* --- CURSOR --- */
@@ -125,11 +126,15 @@ body {
 }
 
 .cursive-name {
-    font-family: var(--font-title); /* Fuente Bebas Neue */
-    font-size: 3.5rem; /* Más grande y fuerte */
-    font-weight: 400;
-    color: #fff; text-shadow: 0 0 15px var(--coffee);
-    text-transform: uppercase; margin: 0; line-height: 1; letter-spacing: 2px;
+    font-family: var(--font-cinzel); /* CAMBIO: Cinzel aquí */
+    font-size: 3.5rem;
+    font-weight: 700; /* Cinzel se ve mejor en negrita (700) */
+    color: #fff; 
+    text-shadow: 0 0 15px var(--coffee);
+    text-transform: capitalize; 
+    margin: 0; 
+    line-height: 1; 
+    letter-spacing: 2px;
 }
 
 .uid-gold { 
@@ -190,9 +195,12 @@ body {
 .welcome-block { width: 100%; max-width: 500px; }
 
 .center-title-fem { 
-    font-family: var(--font-title); /* Bebas Neue */
-    font-weight: 400; font-size: 6rem; /* Título gigante */
-    color: #fff; margin-bottom: 20px; line-height: 0.9; 
+    font-family: var(--font-cinzel); 
+    font-weight: 700; 
+    font-size: 6rem; 
+    color: #fff; 
+    margin-bottom: 20px; 
+    line-height: 0.9; 
     text-align: left; 
     text-shadow: 0 0 25px rgba(0, 81, 255, 0.8);
     letter-spacing: 3px;
