@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Alex - XatSpace</title>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;500;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    
+    <div class="innovative-bg">
+        <img src="https://usagif.com/wp-content/uploads/gif/lion-roar-34.gif" id="bg-video" alt="Lion Background">
+        <div class="bg-overlay"></div>
+    </div>
+
+    <div id="enter-screen">
+        <button id="enter-btn">
+            <i class="fa-solid fa-paw"></i> INGRESAR
+        </button>
+    </div>
+
+    <main id="main-layout" class="hidden-layout">
+        
+        <span class="border-line line-top"></span>
+        <span class="border-line line-right"></span>
+        <span class="border-line line-bottom"></span>
+        <span class="border-line line-left"></span>
+
+        <aside class="sidebar-gold">
+            <div class="profile-center-glow">
+                <img src="https://xatimg.com/image/J4OIVXYR5pum.jpg" alt="Profile" class="pfp-blue">
+            </div>
+            
+            <div class="name-container">
+                <h1 class="cursive-name">Alex</h1>
+            </div>
+            <span class="uid-gold">ID: 1459724412</span>
+
+            <nav class="nav-menu">
+                <button class="nav-btn-gold" onclick="openModal('modal-profile')">
+                    <i class="fa-solid fa-user"></i> PERFIL
+                </button>
+                <button class="nav-btn-gold" onclick="openModal('modal-gallery')">
+                    <i class="fa-solid fa-images"></i> GALERÍA
+                </button>
+                <button class="nav-btn-gold" onclick="openModal('modal-married')">
+                    <i class="fa-solid fa-ring"></i> CASADO
+                </button>
+                <button class="nav-btn-gold" onclick="openModal('modal-music')">
+                    <i class="fa-solid fa-music"></i> MÚSICA
+                </button>
+            </nav>
+        </aside>
+
+        <section class="content-area-gold">
+            <div class="welcome-block">
+                <h2 class="center-title-fem">Alex</h2>
+                
+                <div class="text-wrapper-left">
+                    <p id="typing-text"></p><span class="cursor">_</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="modal-profile" class="modal">
+        <div class="modal-content gold-border">
+            <span class="close-btn" onclick="closeModal('modal-profile')">&times;</span>
+            <h3>PERFIL</h3>
+            <div class="profile-details">
+                <p style="font-family: var(--font-title); font-size: 1.8rem; color: var(--gold); text-align:center; margin-bottom: 20px; letter-spacing: 1px;">
+                    "Sonrie Ama Bendice"
+                </p>
+                <ul>
+                    <li><strong>Pais:</strong> Estados Unidos</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-gallery" class="modal">
+        <div class="modal-content gold-border gallery-modal-size">
+            <span class="close-btn" onclick="closeModal('modal-gallery')">&times;</span>
+            <h3>GALERÍA</h3>
+            <div class="gallery-wrapper">
+                <div class="gallery-container-3d">
+                    <div class="photo-carousel-3d" id="carousel-3d-track"></div>
+                </div>
+                <button class="nav-arrow-gold prev-3d" onclick="moveGallery(-1)">‹</button>
+                <button class="nav-arrow-gold next-3d" onclick="moveGallery(1)">›</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-married" class="modal">
+        <div class="modal-content gold-border">
+            <span class="close-btn" onclick="closeModal('modal-married')">&times;</span>
+            <h3>MARRIED</h3>
+            <div class="married-container">
+                <div class="married-photo-glow">
+                    <img src="https://xatimg.com/image/kSvFnv9ejlyN.jpg" alt="Married Photo" class="married-img">
+                </div>
+                <div class="married-info">
+                    <h2 class="married-name">Fer</h2>
+                    <p class="married-subname">1548309027</p>
+                    <div class="status-online"><i class="fa-solid fa-circle"></i> Online</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-friends" class="modal">
+        <div class="modal-content gold-border">
+            <span class="close-btn" onclick="closeModal('modal-friends')">&times;</span>
+            <h3>FRIENDS</h3>
+             <div class="friend-list-gold">
+                <div class="friend-item-gold"><i class="fa-regular fa-user"></i> <span>Tesh</span> <small>Online</small></div>
+                <div class="friend-item-gold"><i class="fa-regular fa-user"></i> <span>Lunita</span> <small>Online</small></div>
+                <div class="friend-item-gold"><i class="fa-regular fa-user"></i> <span>Dela</span> <small>Online</small></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-music" class="modal">
+        <div class="modal-content gold-border">
+            <span class="close-btn" onclick="closeModal('modal-music')">&times;</span>
+            <h3>MÚSICA</h3>
+             <div class="music-player-gold">
+                <div class="vinyl-record-gold" id="vinyl"><i class="fas fa-compact-disc"></i></div>
+                <div class="song-info-gold">
+                    <h4 id="song-title">Cargando...</h4>
+                    <p id="song-artist">...</p>
+                    <div class="fake-bar-gold" id="progress-container"><div class="fill-gold" id="progress-bar"></div></div>
+                    <div class="controls-gold">
+                        <button onclick="prevSong()"><i class="fas fa-backward"></i></button>
+                        <button onclick="togglePlay()"><i class="fas fa-play" id="play-icon"></i></button>
+                        <button onclick="nextSong()"><i class="fas fa-forward"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="audio" loop></audio>
+    <script src="script.js"></script>
+</body>
+</html>
